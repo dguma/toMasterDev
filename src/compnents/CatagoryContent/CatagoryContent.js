@@ -8,7 +8,7 @@ function CatagoryContent(props) {
     const [subjectContent, setSubjectContent] = useState(``);
 
     
-    const url = 'http://localhost:8000/api/subjects/';
+    const url = 'https://warm-harbor-96907.herokuapp.com/api/subjects/';
 
     useEffect(()=> {
         fetch(url)

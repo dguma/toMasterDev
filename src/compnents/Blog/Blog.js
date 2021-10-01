@@ -1,7 +1,7 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import './blog.css';
 
-const url = 'http://localhost:8000/api/posts/';
+const url = 'https://warm-harbor-96907.herokuapp.com/api/posts/';
 
 function Blog(props) {
 

@@ -2,7 +2,7 @@ import React, { Fragment, useState, useEffect } from 'react';
 import axios from 'axios';
 import './signup.css';
 
-const url = 'http://localhost:8000/api/users/';
+const url = 'https://warm-harbor-96907.herokuapp.com/api/users/';
 
 const defaultUser = {
     firstName:'',

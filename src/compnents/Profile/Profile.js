@@ -4,7 +4,7 @@ import './profile.css';
 function Profile(props) {
     
     const [user, setUser] = useState({})
-    let url = `http://localhost:8000/api/users/${user.id}/`;
+    let url = `https://warm-harbor-96907.herokuapp.com/api/users/${user.id}/`;
 
     useEffect(() => {
         fetch(url, {

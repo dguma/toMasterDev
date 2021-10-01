@@ -11,7 +11,7 @@ import {useState, useEffect} from 'react';
 import Profile from './compnents/Profile/Profile';
 import Blog from './compnents/Blog/Blog';
 
-const url = 'http://localhost:8000/api/users/';
+const url = 'https://warm-harbor-96907.herokuapp.com/api/users/';
 
 function App() {
 
