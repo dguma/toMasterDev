@@ -11,7 +11,7 @@ function Catagories(props) {
         (event.target.id === 'catagory') ? setCatagoryExpand(true) : setCatagoryExpand(false)
         
     }
-console.log(catagoryExpand)
+// console.log(catagoryExpand)
     return (
         <Fragment>
             <div className='catagoryContainer' onClick={clickHandler}>

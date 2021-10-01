@@ -6,7 +6,7 @@ const url = 'https://warm-harbor-96907.herokuapp.com/api/posts/';
 function Blog(props) {
 
     const [blog, setBlog] = useState({});
-    const [posts, setPosts] = useState({});
+    
 
     function blogFormSubmitHandler(event) {
         event.preventDefault();
@@ -16,7 +16,6 @@ function Blog(props) {
             discription: event.target.children[1].children[2].value,
             // date: new Date()
         })
-        console.log(event.target.children[2].children[2].value)
     }
 
     useEffect(() => {
@@ -32,21 +31,7 @@ function Blog(props) {
         .catch(error => console.log(error))
     },[blog])
 
-    useEffect(() => {
-        fetch(url, {
-            headers: {
-              'Accept': 'application/json',
-              'Content-Type': 'application/json'
-            },
-            method: "GET"
-        })
-        .then(res => res.json())
-        .then(res => setPosts(res))
-        .catch(error => console.log(error))
-    },[blog])
-
-    console.log(blog)
-
+   
     return (
         <Fragment>
 
@@ -75,7 +60,7 @@ function Blog(props) {
             <div className='blogListContainer' >
 
             {
-                posts.map(blogItem =>  {
+                props.posts.map(blogItem =>  {
                     return (
                         <div>
                             <h4>{blogItem.title}</h4>

@@ -12,6 +12,7 @@ import Profile from './compnents/Profile/Profile';
 import Blog from './compnents/Blog/Blog';
 
 const url = 'https://warm-harbor-96907.herokuapp.com/api/users/';
+const blogUrl = 'https://warm-harbor-96907.herokuapp.com/api/posts/';
 
 function App() {
 
@@ -66,7 +67,7 @@ function App() {
   }
   
   let found = users.find(user => user.email === login.email && user.password === login.password)
-  console.log(found)
+  // console.log(found)
   localStorage.setItem('user', JSON.stringify(found));
 
   useEffect(() => {
@@ -81,6 +82,23 @@ function App() {
       .then(res => setUsers(res))
       .catch(error => console.log(error))
   },[login, basicInfo])
+
+  const [posts, setPosts] = useState({});
+ useEffect(() => {
+        fetch(blogUrl, {
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json'
+            },
+            method: "GET"
+        })
+        .then(res => res.json())
+        .then(res => setPosts(res))
+        .catch(error => console.log(error))
+    },[])
+
+    console.log(posts)
+
 
   return (
     <div className="App" onClick={toggleBrowse}>
@@ -104,7 +122,7 @@ function App() {
             </Route>
 
             <Route path='/blog'>
-              <Blog user={found}/>
+              <Blog user={found} posts={posts}/>
             </Route>
 
             <Dashboard user={found} />
