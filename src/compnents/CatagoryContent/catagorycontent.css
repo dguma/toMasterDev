@@ -1,0 +1,54 @@
+.subHeader {
+    background-color: #518C81;
+    border-radius: 0 0 1em 1em;
+    margin: -1em 1em 0 1em;
+    padding: 2em;
+    position: relative;
+    z-index: -1;
+    color: whitesmoke;
+}
+
+.content {
+    padding: 2em;
+    line-height: 2em;
+    font-size: 110%;
+}
+
+.content code {
+    background-color: #323D40;
+    padding: 1em;
+    border-radius: .25em;
+    color: whitesmoke;
+}
+
+.content h1, h2, h3 {
+    color: #323D40;
+}
+
+.content p {
+    color: #260112;
+}
+
+.content pre {
+    font-size: 110%;
+    color: #77F2CF;
+}
+
+.content ul {
+    list-style-type:lower-alpha;
+}
+
+.focusSummary {
+    padding: 2em;
+    background-color: #518C81;
+    margin: 1em;
+    border-radius: 1em;
+}
+
+.focusSummary h4 {
+    color: whitesmoke;
+}
+
+.focusSummary h1 {
+    color: #80F2E7;
+}

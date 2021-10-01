@@ -1,0 +1,66 @@
+.signInContainer {
+    background-color: #77F2CF;
+    margin: 10% 4em 0;
+    border-radius: 2em;
+    padding: 0 3em;
+}
+
+.signInForm {
+    height: 17vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4em 0;
+    width: 100%;
+}
+
+.signInInput {
+    width: 18em;
+    height: 3em;
+    margin: .5em;
+    border: none;
+    border-radius: 1em;
+}
+
+.signInInput::placeholder {
+    padding-left: 1em;
+}
+
+.signInGreeting {
+    background-color: #518C81;
+    border-radius: 0 0 1em 1em;
+    margin: -2em 6em 0 6em;
+    padding: 4em 2em;
+    position: relative;
+    z-index: -1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.signInGreeting h2 {
+    color: white;
+    font-size: 2em;
+}
+
+.signInGreeting p {
+    color: #77F2CF;
+    font-size: 1.5em;
+}
+
+
+.signInForm #signInButton {
+    width: 15%;
+    height: 4em;
+    background-color: #323D40;
+    padding: 0;
+}
+
+.signInPasswordContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

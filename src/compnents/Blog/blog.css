@@ -1,0 +1,24 @@
+.blogFormContainer {
+    background-color: #323D40;
+    border-radius: 1em;
+    margin: 1em;
+    padding: 5%;
+}
+
+.blogForm {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.formItem {
+    text-align: center;
+    color: whitesmoke;
+}
+
+.formItem input {
+    border: none;
+    border-radius: .25em;
+    padding: .5em;
+    margin: 1em 0;
+}

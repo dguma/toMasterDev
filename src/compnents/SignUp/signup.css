@@ -1,0 +1,68 @@
+.signUpContainer {
+    background-color: #77F2CF;
+    margin: 10% 4em 0;
+    border-radius: 2em;
+    padding: 0 3em;
+}
+
+.profileInfoForm {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4em 0;
+    width: 100%;
+}
+
+.profileInfoContainer {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-content: center;
+    width: 90%;
+}
+
+.signUpInput {
+    width: 18em;
+    height: 3em;
+    margin: .5em;
+    border: none;
+    border-radius: 1em;
+}
+
+.signUpInput::placeholder {
+    padding-left: 1em;
+}
+
+.signUpGreeting {
+    background-color: #518C81;
+    border-radius: 0 0 1em 1em;
+    margin: -2em 6em 0 6em;
+    padding: 4em 2em;
+    position: relative;
+    z-index: -1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.signUpGreeting h2 {
+    color: white;
+    font-size: 2em;
+}
+
+.signUpGreeting p {
+    color: #77F2CF;
+    font-size: 1.5em;
+}
+
+
+#profileSaveButton {
+    width: 25%;
+    height: 6em;
+    background-color: #323D40;
+    padding: 0;
+}
+

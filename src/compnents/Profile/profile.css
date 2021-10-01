@@ -1,0 +1,59 @@
+.profileContainer {
+    background-color: #518C81;
+    margin: 2em;
+    padding: 1em 3em;
+    border-radius: 2em;
+}
+
+.basicInfoContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.basicInfoContainer h4 {
+    color: #80F2E7;
+}
+
+.basicInfoContainer p {
+    color: whitesmoke;
+}
+
+.editBasicInfoContainer {
+    background-color: #323D40;
+    border-radius: 0 0 1em 1em;
+    margin: -2em 4em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.editBasicInfoContainer form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 2em;
+}
+
+.editBasicInfoContainer form div {
+   text-align: center;
+   margin: .5em;
+}
+
+.editBasicInfoContainer button {
+    margin: -1em 0 2em 0;
+}
+
+.infoContainer input {
+    margin: .5em 0;
+    border: none;
+    border-radius: .25em;
+    padding: .25em;
+}
+
+.infoContainer label {
+    color: whitesmoke;
+}

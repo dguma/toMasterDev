@@ -1,0 +1,49 @@
+section {
+    background-color: #518C81;
+    border-radius: 0 0 1em 1em;
+    margin: -11em 1em 0 1em;
+    padding: 13em 0 2em 0;
+    position: relative;
+    z-index: -1;
+}
+
+.heroContent {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+.heroSample {
+    color: white;
+    background-color: #323D40;
+    border-radius: .5em;
+    padding: 3em 1em;
+    text-align: left;
+    margin: 1em;
+    width: 100%;
+}
+
+.heroSummary {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1em;
+}
+
+.heroContentContainer h1 {
+    margin: 0 1em 0 auto;
+    text-align: right;
+    width: 50%;
+    color: white;
+}
+
+button {
+    font-size: 1em;
+    padding: .5em 25%;
+    border: none;
+    border-radius: .5em;
+    background-color: #77F2CF;
+    color: white;
+}

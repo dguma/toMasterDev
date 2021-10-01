@@ -1,0 +1,33 @@
+.browseContainer {
+    background-color: #323D40;
+    color: whitesmoke;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    padding: 1em 0;
+    border-radius: 0 0 1em 1em;
+    margin: 0 2em;
+}
+
+.browseContainer ul {
+    list-style-type: none;
+    margin: .5em 0;
+    padding: 0;
+}
+
+.browseContainer li {
+    padding: .5em 0;
+}
+
+.browseContainer label {
+    color: #77F2CF;
+}
+
+.browseContainer a {
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+.browseContainer a:hover {
+    color: #80F2E7;
+}
