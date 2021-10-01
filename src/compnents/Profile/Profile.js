@@ -92,9 +92,9 @@ function Profile(props) {
                 <input placeholder='Confirm your password' ></input>
             </div>
 
-            
+            <button type='submit'>Save</button>
         </form>
-        <button type='submit'>Save</button>
+        
     </div>
     </Fragment>
     );

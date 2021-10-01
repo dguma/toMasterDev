@@ -62,7 +62,7 @@ function Blog(props) {
 
             <div className='blogListContainer' >
 
-            {/* {
+            {
                 blog.map(blogItem =>  {
                     return (
                         <div>
@@ -73,7 +73,7 @@ function Blog(props) {
                         </div>
                     )
                 })
-            } */}
+            }
 
             </div>
 
