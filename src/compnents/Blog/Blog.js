@@ -31,7 +31,7 @@ function Blog(props) {
         })
         .then(res => console.log(res))
         .catch(error => console.log(error))
-    },[blog])
+    },[])
 
     console.log(blog)
 
