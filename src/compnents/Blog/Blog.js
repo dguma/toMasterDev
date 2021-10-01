@@ -63,6 +63,7 @@ function Blog(props) {
             <div className='blogListContainer' >
 
             {
+                (blog !== undefined) ?
                 blog.map(blogItem =>  {
                     return (
                         <div>
@@ -72,7 +73,7 @@ function Blog(props) {
                             {blogItem.date}
                         </div>
                     )
-                })
+                }) : null
             }
 
             </div>
