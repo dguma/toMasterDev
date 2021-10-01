@@ -22,3 +22,43 @@
     padding: .5em;
     margin: 1em 0;
 }
+
+.blogListContainer {
+    background-color: #518C81;
+    border-radius: 1em;
+    margin: 1em;
+    padding: 1%;
+}
+
+.blogItemContainer {
+    background-color: rgba(160,200,200,.15);
+    border-radius: .5em;
+    padding: 1em 1em 0 1em ;
+}
+
+.blogItemContent {
+    margin: 0;
+    background-color:whitesmoke;
+    padding: 1em;
+    border-radius: .5em;
+    color: #260112;
+}
+
+.blogItemAuthor {
+    /* float: right; */
+    background-color: #323D40;
+    color: whitesmoke;
+    padding: 1em 1em 1em 1em;
+    border-radius: .5em .5em 0 0;
+    margin: 1em 0 0 0;
+    /* z-index: -1; */
+    /* position: fixed; */
+}
+
+.blogItemCaption {
+    color: whitesmoke;
+}
+
+.blogItemCaption span {
+    color: #77F2CF;
+}

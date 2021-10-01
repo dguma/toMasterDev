@@ -95,7 +95,7 @@ function App() {
         .then(res => res.json())
         .then(res => setPosts(res))
         .catch(error => console.log(error))
-    },[])
+    },[browse])
 
     console.log(posts)
 

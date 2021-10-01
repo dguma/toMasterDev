@@ -5,17 +5,31 @@ const url = 'https://warm-harbor-96907.herokuapp.com/api/posts/';
 
 function Blog(props) {
 
-    const [blog, setBlog] = useState({});
+    const [blog, setBlog] = useState(props.posts);
     
 
     function blogFormSubmitHandler(event) {
         event.preventDefault();
         setBlog({
+            ...props.posts,
             name: event.target.children[2].children[2].value,
             title: event.target.children[0].children[2].value,
-            discription: event.target.children[1].children[2].value,
+            description: event.target.children[1].children[2].value,
             // date: new Date()
         })
+    }
+
+    function deleteHandler(event) {
+        event.preventDefault();
+        fetch(`${url}${event.target.parentNode.parentNode.id}`, {
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json',
+            },
+            method: "DELETE"
+        })
+        .then(res => console.log(res))
+        .catch(error => console.log(error))
     }
 
     useEffect(() => {
@@ -62,11 +76,14 @@ function Blog(props) {
             {
                 props.posts.map(blogItem =>  {
                     return (
-                        <div>
-                            <h4>{blogItem.title}</h4>
-                            <p>{blogItem.description}</p>
-                            <p>By: {blogItem.name}</p>
-                            {blogItem.date}
+                        <div className='blogItemContainer' id={blogItem.id}>
+                            <p className='blogItemContent' >{blogItem.description}</p>
+                            <hr />
+                            <label className='blogItemCaption' ><span>Caption:</span> {blogItem.title}</label>
+                            <div className='blogItemAuthor' >
+                                By: {blogItem.name}
+                                <button onClick={deleteHandler}>Delete</button>
+                            </div>
                         </div>
                     )
                 })
