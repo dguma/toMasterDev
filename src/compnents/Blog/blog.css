@@ -5,10 +5,31 @@
     padding: 5%;
 }
 
-.blogForm {
+.blogEdit, .blogForm {
     display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    padding: 1em 0;
+}
+
+.blogEdit {
+    display: none;
+}
+
+.contentInput textarea {
+    flex-grow: 2;
+    width: 16em;
+    height: 10em;
+    align-self: flex-start;
+    margin: 1em 0;
+}
+.captionInput {
+    flex-grow: 2;
+}
+.aurthorInput {
+    flex-grow: 1;
 }
 
 .formItem {
@@ -31,9 +52,10 @@
 }
 
 .blogItemContainer {
-    background-color: rgba(160,200,200,.15);
+    background-color: rgba(6, 71, 71, 0.411);
     border-radius: .5em;
     padding: 1em 1em 0 1em ;
+    margin: 1em 0;
 }
 
 .blogItemContent {
@@ -53,6 +75,27 @@
     margin: 1em 0 0 0;
     /* z-index: -1; */
     /* position: fixed; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.blogItemAuthor p {
+    flex-grow: 1;
+}
+
+.blogItemAuthor button {
+    margin: 0 .5em;
+}
+
+.blogDeleteButton{
+    padding: .5em 1em;
+    background-color: darkred;
+}
+
+.blogEditButton {
+    padding: .5em 1em;
+    background-color: #80F2E7;
 }
 
 .blogItemCaption {

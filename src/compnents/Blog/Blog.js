@@ -4,7 +4,6 @@ import './blog.css';
 const url = 'https://warm-harbor-96907.herokuapp.com/api/posts/';
 
 function Blog(props) {
-
     const [blog, setBlog] = useState(props.posts);
     
 
@@ -17,26 +16,64 @@ function Blog(props) {
             description: event.target.children[1].children[2].value,
             // date: new Date()
         })
+
+        setTimeout(()=> {
+            event.target.children[2].children[2].value = ''
+            event.target.children[0].children[2].value = ''
+            event.target.children[1].children[2].value = ''
+        },1000)
+    }
+
+    function blogEditSubmitHandler(event) {
+        event.preventDefault();
+
+        fetch(`${url}${event.target.parentNode.id}/`, {
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json'
+            },
+            method: "PUT",
+            body: JSON.stringify({
+                name: event.target.children[2].children[2].value,
+                title: event.target.children[0].children[2].value,
+                description: event.target.children[1].children[2].value,
+                })
+        })
+        .then(res => console.log(res))
+        .catch(error => console.log(error))
+
+        setTimeout(()=> {
+            event.target.children[2].children[2].value = ''
+            event.target.children[0].children[2].value = ''
+            event.target.children[1].children[2].value = ''
+        },1000)
     }
 
     function deleteHandler(event) {
         event.preventDefault();
-        fetch(`${url}${event.target.parentNode.parentNode.id}`, {
+        fetch(`${url}${event.target.parentNode.parentNode.id}/`, {
             headers: {
               'Accept': 'application/json',
               'Content-Type': 'application/json',
             },
-            method: "DELETE"
+            mode: 'cors',
+            method: "DELETE",
+            body:null,
         })
-        .then(res => console.log(res))
+        .then(res => res.json())
         .catch(error => console.log(error))
+    }
+
+    function editToggle(event) {
+        event.preventDefault();
+        document.querySelector('.blogEdit').style.display = 'none';
     }
 
     useEffect(() => {
         fetch(url, {
             headers: {
               'Accept': 'application/json',
-              'Content-Type': 'application/json'
+              'Content-Type': 'application/json',
             },
             method: "POST",
             body: JSON.stringify(blog)
@@ -51,17 +88,17 @@ function Blog(props) {
 
             <div className='blogFormContainer' >
                 <form className='blogForm' onSubmit={blogFormSubmitHandler}>
-                    <div className='formItem' >
-                        <label>Title</label>
+                    <div className='formItem contentInput' >
+                        <label>Content</label>
+                        <br />
+                        <textarea></textarea>
+                    </div>
+                    <div className='formItem captionInput' >
+                        <label>Caption</label>
                         <br />
                         <input></input>
                     </div>
-                    <div className='formItem' >
-                        <label>Description</label>
-                        <br />
-                        <input></input>
-                    </div>
-                    <div className='formItem' >
+                    <div className='formItem aurthorInput' >
                         <label>Aurthor</label>
                         <br />
                         <input></input>
@@ -71,7 +108,7 @@ function Blog(props) {
                 
             </div>
 
-            <div className='blogListContainer' >
+            <div className='blogListContainer' onClick={editToggle}>
 
             {
                 props.posts.map(blogItem =>  {
@@ -81,9 +118,28 @@ function Blog(props) {
                             <hr />
                             <label className='blogItemCaption' ><span>Caption:</span> {blogItem.title}</label>
                             <div className='blogItemAuthor' >
-                                By: {blogItem.name}
-                                <button onClick={deleteHandler}>Delete</button>
+                                <p>By: {blogItem.name}</p>
+                                <button className='blogEditButton' onClick={editToggle}>Edit</button>
+                                <button className='blogDeleteButton' onClick={deleteHandler}>Delete</button>
                             </div>
+                            <form className='blogEdit' onSubmit={blogEditSubmitHandler}>
+                                <div className='formItem contentInput' >
+                                    <label>Content</label>
+                                    <br />
+                                    <textarea></textarea>
+                                </div>
+                                <div className='formItem captionInput' >
+                                    <label>Caption</label>
+                                    <br />
+                                    <input></input>
+                                </div>
+                                <div className='formItem aurthorInput' >
+                                    <label>Aurthor</label>
+                                    <br />
+                                    <input></input>
+                                </div>
+                                <button type='submit' >Confirm</button>
+                            </form>
                         </div>
                     )
                 })

@@ -13,7 +13,7 @@ function Catagories(props) {
     }
 // console.log(catagoryExpand)
     return (
-        <Fragment>
+        <div>
             <div className='catagoryContainer' onClick={clickHandler}>
                 <div className='catagories'>
                     <span id='catagory'>
@@ -45,7 +45,7 @@ function Catagories(props) {
                 </div>
             </div> : null
             }
-        </Fragment>
+        </div>
     );
 }
 

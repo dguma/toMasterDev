@@ -4,19 +4,6 @@ import Browse from '../Browse/Browse';
 import './header.css'
 
 function Header(props) {
-    
-    const [user, setUser] = useState({});
-
-    // useEffect(() => {
-    //     setUser(JSON.parse(localStorage.getItem('user')))
-    // }, [props.user])
-
-  
-        
-        // console.log(user)
-  
-
-    
 
     return (
         <Fragment>

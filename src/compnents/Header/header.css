@@ -1,9 +1,9 @@
 header {
     width: 100vw;
-    height: 10vh;
+    min-height: 2em;
     background-color: #77F2CF;
     margin: 0;
-    padding: 0;
+    padding: 1em 0;
     border-radius: 0 0 2em 2em;
     z-index: 1;
 }
@@ -45,4 +45,15 @@ header {
 
 #signUpButton {
     background-color: #323D40;
+}
+
+@media screen and (max-width:414px) {
+    .headerContainer {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .headerButtonsContainer {
+        margin-right: 0;
+    }
 }

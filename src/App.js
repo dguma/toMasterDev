@@ -63,7 +63,13 @@ function App() {
 }
 
   function toggleBrowse(event) {
-    (event.target.id === 'browseButton') ? setBrowse(true) : setBrowse(false)
+    if(event.target.id === 'browseButton'){ 
+      setBrowse(true)
+    } else if(event.target.className === 'blogEditButton') {
+      document.querySelector('.blogEdit').style.display = 'flex';
+    } else {
+      setBrowse(false)
+    }
   }
   
   let found = users.find(user => user.email === login.email && user.password === login.password)

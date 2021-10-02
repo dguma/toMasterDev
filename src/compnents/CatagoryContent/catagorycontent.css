@@ -12,13 +12,15 @@
     padding: 2em;
     line-height: 2em;
     font-size: 110%;
+    width: 100%;
 }
 
 .content code {
     background-color: #323D40;
-    padding: 1em;
+    padding: 0 1em;
     border-radius: .25em;
     color: whitesmoke;
+    height: 2em;
 }
 
 .content h1, h2, h3 {
