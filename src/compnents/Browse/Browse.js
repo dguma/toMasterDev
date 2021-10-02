@@ -15,9 +15,9 @@ function Browse(props) {
             <div className='catagorySectionContainer'>
                 <label>Catagories</label>
                 <ul>
-                    <Link to='catagory'><li>HTML</li></Link>
-                    <li>CSS</li>
-                    <li>JavaScript</li>
+                    <Link to='html-catagory'><li>HTML</li></Link>
+                    <Link to='css-catagory'><li>CSS</li></Link>
+                    <Link to='javascript-catagory'><li>JavaScript</li></Link>
                 </ul>
             </div>
             <div className='blogSectionContainer'>

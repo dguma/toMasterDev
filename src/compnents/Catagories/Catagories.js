@@ -17,13 +17,13 @@ function Catagories(props) {
             <div className='catagoryContainer' onClick={clickHandler}>
                 <div className='catagories'>
                     <span id='catagory'>
-                        <NavLink to='catagory'><p>HTML</p></NavLink>
+                        <NavLink to='html-catagory'><p>HTML</p></NavLink>
                     </span>
                     <span id='catagory'>
-                        <p>CSS</p>
+                        <NavLink to='css-catagory'><p>CSS</p></NavLink>
                     </span>
                     <span id='catagory'>
-                        <p>JavaScript</p>
+                        <NavLink to='javascript-catagory'><p>JavaScript</p></NavLink>
                     </span>
                 </div>
             </div>

@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import { Fragment } from 'react';
-import './catagorycontent.css';
+import './htmlcatagorycontent.css';
 
-function CatagoryContent(props) {
+function HTMLCatagoryContent(props) {
 
-    const [subject, setSubject] = useState([]);
-    const [subjectContent, setSubjectContent] = useState(``);
+    const [htmlDef, sethtmlDef] = useState([]);
+    const [htmlSubjectContent, setHTMLSubjectContent] = useState(``);
 
     
     const url = 'https://warm-harbor-96907.herokuapp.com/api/subjects/';
@@ -14,12 +14,12 @@ function CatagoryContent(props) {
         fetch(url)
         .then(res => res.json())
         .then(res => {
-            setSubject(res)
-            setSubjectContent(res[0].focusContent)
+            sethtmlDef(res)
+            setHTMLSubjectContent(res[0].focusContent)
         })
     },[])
 
-    console.log(subjectContent)
+    console.log(htmlDef)
 
     return (
         <Fragment>
@@ -28,18 +28,19 @@ function CatagoryContent(props) {
             </div> */}
             
             {
-            subject.map(content => {
+            htmlDef.map(content => {
                 const title = content.focus;
                 const description = content.focusDefinition;
                 // const subjectContent = content.focusContent;
                 return (
                     <Fragment>
                         <div className='focusSummary'>
-                            <h1>{title}</h1>
-                            <h4>{description}</h4>
+                            <cite>From: <a href='https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started'>{htmlDef[0].focusLinks}</a></cite>
+                            <h1>{htmlDef[0].focus}</h1>
+                            <h4>{htmlDef[0].focusDefinition}</h4>
                         </div>
                         
-                        <div className="content" dangerouslySetInnerHTML={{__html: subjectContent}}></div>
+                        <div className="content" dangerouslySetInnerHTML={{__html: htmlSubjectContent}}></div>
                     </Fragment>
                 );
             })}
@@ -49,4 +50,4 @@ function CatagoryContent(props) {
     );
 }
 
-export default CatagoryContent;
+export default HTMLCatagoryContent;

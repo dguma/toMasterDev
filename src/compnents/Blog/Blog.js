@@ -22,6 +22,23 @@ function Blog(props) {
             event.target.children[0].children[2].value = ''
             event.target.children[1].children[2].value = ''
         },1000)
+
+        fetch(url, {
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json',
+            },
+            method: "POST",
+            body: JSON.stringify({
+                ...props.posts,
+                name: event.target.children[2].children[2].value,
+                title: event.target.children[0].children[2].value,
+                description: event.target.children[1].children[2].value,
+                // date: new Date()
+            })
+        })
+        .then(res => console.log(res))
+        .catch(error => console.log(error))
     }
 
     function blogEditSubmitHandler(event) {
@@ -66,21 +83,16 @@ function Blog(props) {
 
     function editToggle(event) {
         event.preventDefault();
-        document.querySelector('.blogEdit').style.display = 'none';
+        if(event.target.nodeName === 'INPUT' || 
+           event.target.nodeName === 'INPUT' ||
+           event.target.nodeName === 'TEXTAREA' ||
+           event.target.className === 'blogEditButton'
+        ) {
+            document.querySelector('.blogEdit').style.display = 'flex';
+        } else {
+            document.querySelector('.blogEdit').style.display = 'none';
+        }
     }
-
-    useEffect(() => {
-        fetch(url, {
-            headers: {
-              'Accept': 'application/json',
-              'Content-Type': 'application/json',
-            },
-            method: "POST",
-            body: JSON.stringify(blog)
-        })
-        .then(res => console.log(res))
-        .catch(error => console.log(error))
-    },[blog])
 
    
     return (
@@ -103,7 +115,7 @@ function Blog(props) {
                         <br />
                         <input></input>
                     </div>
-                    <button type='submit'>Send</button>
+                    <button type='submit' className='blogSendButton' >Send</button>
                 </form>
                 
             </div>

@@ -21,9 +21,6 @@
     margin: .5em;
     border: none;
     border-radius: 1em;
-}
-
-.signInInput::placeholder {
     padding-left: 1em;
 }
 
