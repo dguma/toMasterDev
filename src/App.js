@@ -73,7 +73,7 @@ function App() {
     } else {
       setBrowse(false)
     }
-    console.log(browse)
+    // console.log(browse)
   }
 
   function renderPosts(event) {

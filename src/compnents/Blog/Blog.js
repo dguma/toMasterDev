@@ -43,27 +43,27 @@ function Blog(props) {
 
     function blogEditSubmitHandler(event) {
         event.preventDefault();
-
-        fetch(`${url}${event.target.parentNode.id}/`, {
+        fetch(`${url}${event.target.parentNode.parentNode.id}/`, {
             headers: {
               'Accept': 'application/json',
               'Content-Type': 'application/json'
             },
             method: "PUT",
             body: JSON.stringify({
-                name: event.target.children[2].children[2].value,
-                title: event.target.children[0].children[2].value,
-                description: event.target.children[1].children[2].value,
+                name: event.target.parentNode.children[2].children[2].value,
+                title: event.target.parentNode.children[0].children[2].value,
+                description: event.target.parentNode.children[1].children[2].value,
                 })
         })
         .then(res => console.log(res))
         .catch(error => console.log(error))
 
         setTimeout(()=> {
-            event.target.children[2].children[2].value = ''
-            event.target.children[0].children[2].value = ''
-            event.target.children[1].children[2].value = ''
+            event.target.parentNode.children[2].children[2].value = ''
+            event.target.parentNode.children[0].children[2].value = ''
+            event.target.parentNode.children[1].children[2].value = ''
         },1000)
+        console.log(event.target.parentNode.parentNode)
     }
 
     function deleteHandler(event) {
@@ -85,8 +85,8 @@ function Blog(props) {
         event.preventDefault();
         if(event.target.nodeName === 'INPUT' || 
            event.target.nodeName === 'INPUT' ||
-           event.target.nodeName === 'TEXTAREA' ||
-           event.target.className === 'blogEditButton'
+           event.target.nodeName === 'TEXTAREA' || 
+           event.target.className === 'confirm'
         ) {
             document.querySelector('.blogEdit').style.display = 'flex';
         } else {
@@ -150,7 +150,7 @@ function Blog(props) {
                                     <br />
                                     <input></input>
                                 </div>
-                                <button type='submit' >Confirm</button>
+                                <button type='submit' className='confirm' onClick={blogEditSubmitHandler}>Confirm</button>
                             </form>
                         </div>
                     )
