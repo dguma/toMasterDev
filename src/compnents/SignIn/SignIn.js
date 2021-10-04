@@ -11,7 +11,7 @@ function SignIn(props) {
 
                     <div className='signInPasswordContainer'>
                         <input className='signInInput' id='signInEmail' placeholder='Enter your email'></input>
-                        <input   input className='signInInput' id='signInPassword' placeholder='Enter your password'></input>
+                        <input   input className='signInInput' id='signInPassword' placeholder='Enter your password' type='password'></input>
                     </div>
 
                     <button type='submit' id='signInButton'>Submit</button>
