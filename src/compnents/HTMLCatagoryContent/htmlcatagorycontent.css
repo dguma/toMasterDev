@@ -42,7 +42,7 @@
 
 .focusSummary {
     padding: 2em;
-    background-color: #518C81;
+    background-color: rgba(51, 50, 64, .25);
     margin: 1em;
     border-radius: 1em;
 }

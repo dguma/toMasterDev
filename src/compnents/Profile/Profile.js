@@ -19,29 +19,29 @@ function Profile(props) {
         .catch(error => console.log(error))
         setUser(JSON.parse(localStorage.getItem('user')))
     }, [props.basicInfo, url])
-    // console.log(basicInfo)
+    console.log(user)
 
 
-// console.log(props.basicInfo)
+console.log(props.basicInfo)
     return (
         <Fragment>
         <div className='profileContainer' >
             <div className='basicInfoContainer' >
                 <div>
                     <h4>First Name</h4>
-                    <p>{props.found.firstName}</p>
+                    <p>{props.basicInfo.firstName}</p>
                 </div>
                 <div>
                     <h4>Last Name</h4>
-                    <p>{props.found.lastName}</p>
+                    <p>{props.basicInfo.lastName}</p>
                 </div>
                 <div>
                     <h4>Email</h4>
-                    <p>{props.found.email}</p>
+                    <p>{props.basicInfo.email}</p>
                 </div>
                 <div>
                     <h4>Password</h4>
-                    <p>{props.found.password}</p>
+                    <p>{props.basicInfo.password}</p>
                 </div>
 
             </div>

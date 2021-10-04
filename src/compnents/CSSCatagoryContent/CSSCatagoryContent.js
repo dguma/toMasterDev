@@ -19,30 +19,25 @@ function CSSCatagoryContent(props) {
         })
     },[])
 
-    return (
-        <Fragment>
-            {/* <div className='subHeader'>
-                <h1>HTML</h1>
-            </div> */}
-            
-            {
-            cssDef.map(content => {
-                return (
-                    <Fragment>
-                        <div className='focusSummary'>
-                        <cite>From: <a href='https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps/What_is_CSS'>{cssDef[2].focusLinks}</a></cite>
-                            <h1>{cssDef[2].focus}</h1>
-                            <h4>{cssDef[2].focusDefinition}</h4>
-                        </div>
-                        
-                        <div className="content" dangerouslySetInnerHTML={{__html: cssSubjectContent}}></div>
-                    </Fragment>
-                );
-            })}
-            
+    const cssContent = cssDef[2];
 
-        </Fragment>
-    );
+    if(cssContent) {
+        return (
+            <Fragment>
+                <div className='focusSummary'>
+                <cite>From: <a href='https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps/What_is_CSS'>{cssContent.focusLinks}</a></cite>
+                    <h1>{cssContent.focus}</h1>
+                    <h4>{cssContent.focusDefinition}</h4>
+                </div>
+                
+                <div className="content" dangerouslySetInnerHTML={{__html: cssSubjectContent}}></div>
+            </Fragment>
+        );
+    } else {
+        return (
+            <div></div>
+        )
+    }
 }
 
 export default CSSCatagoryContent;

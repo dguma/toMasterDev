@@ -1,11 +1,26 @@
+@import url("https://use.typekit.net/int6hur.css");
+
 header {
     width: 100vw;
     min-height: 2em;
-    background-color: #77F2CF;
+    background: rgb(34,193,195);
+    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+    background-size: 200% 200%;
     margin: 0;
     padding: 1em 0;
     border-radius: 0 0 2em 2em;
     z-index: 1;
+    box-shadow: rgb(2, 29, 25) 0 0 1em 0em;
+    animation: headerGradient infinite 5s 0s ease-in-out;
+    font-family: eurostile, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@keyframes headerGradient {
+    0%{background-position:15% 0%}
+    50%{background-position:91% 100%}
+    100%{background-position:15% 0%}
 }
 
 .headerContainer {
@@ -23,6 +38,8 @@ header {
 .headerContainer h2  {
     margin: 0 0 0 1em;
     font-size: 2em;
+    color: whitesmoke;
+    letter-spacing: 1px;
 }
 
 .headerButtonsContainer {
@@ -33,12 +50,16 @@ header {
     align-items: center;
 }
 
+.headerButtonsContainer h4 {
+    color: #260112;
+}
+
 .headerButton {
     font-size: 1em;
     padding: .5em;
     border: none;
     border-radius: .5em;
-    background-color: #518C81;
+    background-color: rgba(51, 50, 64, .5);
     color: white;
     margin: 0 .5em;
 }

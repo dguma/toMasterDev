@@ -1,5 +1,5 @@
 .blogFormContainer {
-    background-color: #323D40;
+    background-color: rgba(51, 50, 64, .25);
     border-radius: 1em;
     margin: 1em;
     padding: 5%;
@@ -20,8 +20,8 @@
 
 .contentInput textarea {
     flex-grow: 2;
-    width: 16em;
-    height: 10em;
+    width: 80vw;
+    height: auto;
     align-self: flex-start;
     margin: 1em 0;
 }
@@ -42,10 +42,11 @@
     border-radius: .25em;
     padding: .5em;
     margin: 1em 0;
+    width: 50vw;
 }
 
 .blogListContainer {
-    background-color: #518C81;
+    background-color: rgba(51, 50, 64, .25);
     border-radius: 1em;
     margin: 1em;
     padding: 1%;
@@ -56,6 +57,9 @@
     border-radius: .5em;
     padding: 1em 1em 0 1em ;
     margin: 1em 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .blogItemContent {

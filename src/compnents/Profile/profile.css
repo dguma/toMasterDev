@@ -1,5 +1,5 @@
 .profileContainer {
-    background-color: #518C81;
+    background-color: rgba(51, 50, 64, .25);
     margin: 2em;
     padding: 1em 3em;
     border-radius: 2em;
@@ -41,10 +41,6 @@
 .editBasicInfoContainer form div {
    text-align: center;
    margin: .5em;
-}
-
-.editBasicInfoContainer button {
-    margin: -1em 0 2em 0;
 }
 
 .infoContainer input {

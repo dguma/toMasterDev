@@ -19,35 +19,26 @@ function HTMLCatagoryContent(props) {
         })
     },[])
 
-    console.log(htmlDef)
+    const htmlContent = htmlDef[0];
 
-    return (
-        <Fragment>
-            {/* <div className='subHeader'>
-                <h1>HTML</h1>
-            </div> */}
-            
-            {
-            htmlDef.map(content => {
-                const title = content.focus;
-                const description = content.focusDefinition;
-                // const subjectContent = content.focusContent;
-                return (
-                    <Fragment>
-                        <div className='focusSummary'>
-                            <cite>From: <a href='https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started'>{htmlDef[0].focusLinks}</a></cite>
-                            <h1>{htmlDef[0].focus}</h1>
-                            <h4>{htmlDef[0].focusDefinition}</h4>
-                        </div>
-                        
-                        <div className="content" dangerouslySetInnerHTML={{__html: htmlSubjectContent}}></div>
-                    </Fragment>
-                );
-            })}
-            
-
-        </Fragment>
-    );
+    if(htmlContent) {
+        return (
+            <Fragment>
+                <div className='focusSummary'>
+                    <cite>From: <a href='https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started'>{htmlContent.focusLinks}</a></cite>
+                    <h1>{htmlContent.focus}</h1>
+                    <h4>{htmlContent.focusDefinition}</h4>
+                            </div>
+                
+                <div className="content" dangerouslySetInnerHTML={{__html: htmlSubjectContent}}/>
+            </Fragment> 
+        )
+    } else {
+        return (
+            <div></div>
+        )
+    }
+        
 }
 
 export default HTMLCatagoryContent;

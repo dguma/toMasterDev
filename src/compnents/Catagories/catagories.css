@@ -1,9 +1,8 @@
 .catagoryContainer {
-    background-color: #518C81;
+    background-color: rgba(51, 50, 64, .25);
     border-radius: 1em;
-    margin: 1em 0;
+    margin: 2em;
     padding: 5% 0;
-    width: 100%;
 }
 
 .catagories {

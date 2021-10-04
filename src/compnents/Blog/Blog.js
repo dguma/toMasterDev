@@ -80,18 +80,16 @@ function Blog(props) {
         .then(res => res.json())
         .catch(error => console.log(error))
     }
-
+// event.target.nodeName === 'INPUT' || 
+//            event.target.nodeName === 'INPUT' ||
+//            event.target.nodeName === 'TEXTAREA' || 
+//            event.target.className === 'confirm' ||
     function editToggle(event) {
-        event.preventDefault();
-        if(event.target.nodeName === 'INPUT' || 
-           event.target.nodeName === 'INPUT' ||
-           event.target.nodeName === 'TEXTAREA' || 
-           event.target.className === 'confirm'
-        ) {
-            document.querySelector('.blogEdit').style.display = 'flex';
-        } else {
-            document.querySelector('.blogEdit').style.display = 'none';
-        }
+            event.target.parentNode.parentNode.children[4].style.display = 'flex'
+    }
+
+    function cancelEdit(event) {
+        event.target.parentNode.children[4].style.display = 'none'
     }
 
    
@@ -120,18 +118,18 @@ function Blog(props) {
                 
             </div>
 
-            <div className='blogListContainer' onClick={editToggle}>
+            <div className='blogListContainer' >
 
             {
                 props.posts.map(blogItem =>  {
                     return (
-                        <div className='blogItemContainer' id={blogItem.id}>
+                        <div className='blogItemContainer' id={blogItem.id}  >
                             <p className='blogItemContent' >{blogItem.description}</p>
                             <hr />
                             <label className='blogItemCaption' ><span>Caption:</span> {blogItem.title}</label>
                             <div className='blogItemAuthor' >
                                 <p>By: {blogItem.name}</p>
-                                <button className='blogEditButton' onClick={editToggle}>Edit</button>
+                                <button className='blogEditButton' onClick={editToggle} >Edit</button>
                                 <button className='blogDeleteButton' onClick={deleteHandler}>Delete</button>
                             </div>
                             <form className='blogEdit' onSubmit={blogEditSubmitHandler}>
@@ -152,6 +150,7 @@ function Blog(props) {
                                 </div>
                                 <button type='submit' className='confirm' onClick={blogEditSubmitHandler}>Confirm</button>
                             </form>
+                            <button className='cancel' onClick={cancelEdit} >Cancel</button>
                         </div>
                     )
                 })

@@ -36,7 +36,17 @@ function SignUp(props) {
             method: "POST",
             body: JSON.stringify(user)
         })
-        .then(res => console.log(res))
+        .then(res => {
+            console.log(res)
+            if(res.status === 201) {
+                document.querySelector('.successPrompt').style.display = 'block'
+
+                setTimeout(() => {
+                    document.querySelector('.successPrompt').style.display = 'none'
+                    window.location.href = '/'
+                },2000)
+            }
+        })
         .catch(error => console.log(error))
     },[user])
 
@@ -55,7 +65,7 @@ function SignUp(props) {
 
                     <div className='profilePasswordContainer'>
                         <input className='signUpInput' id='profilePassword' placeholder='Enter a password'></input>
-                        <input className='signUpInput' id='profileConfirmPassword' placeholder='Confirm password'></input>
+                        <input className='signUpInput' id='profileConfirmPassword' placeholder='Confirm password' type='password'></input>
                     </div>
 
                     <button type='submit' id='profileSaveButton'>Save</button>
@@ -65,6 +75,9 @@ function SignUp(props) {
             <div className='signUpGreeting'>
                 <h2>Create Profile</h2>
                 <p>Welcome, sign up to start learning today.</p>
+            </div>
+            <div className='successPrompt' style={{display:'none'}} >
+                <h3>Success</h3>
             </div>
         </Fragment>
     );
